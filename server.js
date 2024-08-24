@@ -16,7 +16,7 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(
   cors({
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-    origin: [ "http://localhost:3000"],
+    origin: [ "http://localhost:3000", "https://blogapp-5eju.onrender.com"],
   })
 );
 
