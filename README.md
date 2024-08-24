@@ -30,37 +30,43 @@ This project provides a REST API for managing user authentication and blog posts
 ## User Signup:
 
 POST /auth/signup
-Example: http://localhost:7005/auth/signup
-User Login:
+User signup: http://localhost:7005/auth/signup
 
 POST /auth/login
-Example: http://localhost:7005/auth/login
+User Login: http://localhost:7005/auth/login
 
 ## Blog Post CRUD API
-Get All Posts:
+
 
 GET /
 Example: http://localhost:7005/posts
-Add a New Post:
+Get All Posts:
+
 
 POST /
 Example: http://localhost:7005/posts
-Delete All Posts:
+Add a New Post:
+
 
 DELETE /
 Example: http://localhost:7005/posts
-Get a Single Post:
+Delete All Posts:
+
 
 GET /:id
 Example: http://localhost:7005/posts/:id
-Update a Post:
+Get a Single Post:
+
 
 PUT /:id
 Example: http://localhost:7005/posts/:id
-Delete a Single Post:
+Update a Post:
+
 
 DELETE /:id
 Example: http://localhost:7005/posts/:id
-Security
+Delete a Single Post:
+
+##Security
 JWT token is implemented to secure blog post transactions.
 "# blogPostServer" 
