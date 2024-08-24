@@ -48,9 +48,7 @@ Example: http://localhost:7005/posts
 Add a New Post:
 
 
-DELETE /
-Example: http://localhost:7005/posts
-Delete All Posts:
+
 
 
 GET /:id
