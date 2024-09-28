@@ -22,7 +22,7 @@ app.use(
 
 
 
-const port = process.env.PORT || 7002;
+const port = process.env.PORT || 5002;
 
 
  
