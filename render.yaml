@@ -15,17 +15,10 @@ services:
     image: prakashmishr/blog-backend:latest  # Docker image for the backend
     envVars:
       - key: MONGODB_URL
-        value: mongodb://mongo-db:27017
+        value: mongodb+srv://prakashmishr:XPGaJLpoQDRh24ns@cluster0.drbse.mongodb.net/holidayhub?retryWrites=true&w=majority
       - key: JWTSECRET
         value: mySecret
     autoDeploy: true  # Automatically deploy on changes
     ports:
       - port: 5002  # Specifies the port to expose the service
 
-  - name: mongo-db
-    type: privateService  # MongoDB doesn't need to be exposed publicly
-    env: docker
-    image: mongo:latest  # Official MongoDB image
-    volumes:
-      - name: mongodb_data_blog
-        mountPath: /data/db  # Persistent storage for MongoDB
