@@ -15,10 +15,9 @@ services:
     image: prakashmishr/blog-backend:latest  # Docker image for the backend
     envVars:
       - key: MONGODB_URL
-        value: mongodb+srv://prakashmishr:XPGaJLpoQDRh24ns@cluster0.drbse.mongodb.net/holidayhub?retryWrites=true&w=majority
+        value: 'mongodb+srv://prakashmishr:XPGaJLpoQDRh24ns@cluster0.drbse.mongodb.net/holidayhub?retryWrites=true&w=majority'
       - key: JWTSECRET
         value: mySecret
     autoDeploy: true  # Automatically deploy on changes
     ports:
       - port: 5002  # Specifies the port to expose the service
-
