@@ -1,31 +1,31 @@
 services:
-  - type: web
-    name: blog-frontend
-    env: docker  # Using a prebuilt image
-    image: prakashmishr/blog-frontend:latest  # Use the Docker image from Docker Hub or other registry
+  - name: blog-frontend
+    type: web
+    env: docker  # Specifies that it's a Docker-based environment
+    image: prakashmishr/blog-frontend:latest  # Docker image for the frontend
     envVars:
       - key: REACT_APP_SERVER_URL
         value: https://backend-service-url  # Replace with actual backend Render service URL
     ports:
-      - 3000
+      - port: 3000  # Specifies the port to expose the service
 
-  - type: web
-    name: blog-backend
+  - name: blog-backend
+    type: web
     env: docker
-    image: prakashmishr/blog-backend:latest  # Use the Docker image from Docker Hub or other registry
+    image: prakashmishr/blog-backend:latest  # Docker image for the backend
     envVars:
       - key: MONGODB_URL
         value: mongodb://mongo-db:27017
       - key: JWTSECRET
         value: mySecret
-    autoDeploy: true
+    autoDeploy: true  # Automatically deploy on changes
     ports:
-      - 5002
+      - port: 5002  # Specifies the port to expose the service
 
-  - type: service
-    name: mongo-db
+  - name: mongo-db
+    type: privateService  # MongoDB doesn't need to be exposed publicly
     env: docker
-    image: mongo:latest  # Use the official MongoDB Docker image from DockerHub
+    image: mongo:latest  # Official MongoDB image
     volumes:
       - name: mongodb_data_blog
-        mountPath: /data/db
+        mountPath: /data/db  # Persistent storage for MongoDB
