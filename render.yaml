@@ -1,23 +1,22 @@
 services:
   - name: blog-frontend
     type: web
-    env: docker  # Specifies that it's a Docker-based environment
-    image: prakashmishr/blog-frontend:latest  # Docker image for the frontend
+    env: docker
+    image: prakashmishr/blog-frontend:latest
     envVars:
       - key: REACT_APP_SERVER_URL
-        value: https://backend-service-url  # Replace with actual backend Render service URL
+        value: https://backend-service-url
     ports:
-      - port: 3000  # Specifies the port to expose the service
+      - port: 3000
 
   - name: blog-backend
     type: web
     env: docker
-    image: prakashmishr/blog-backend:latest  # Docker image for the backend
+    image: prakashmishr/blog-backend:latest
     envVars:
-      - key: MONGODB_URL
-        value: 'mongodb+srv://prakashmishr:XPGaJLpoQDRh24ns@cluster0.drbse.mongodb.net/holidayhub?retryWrites=true&w=majority'
       - key: JWTSECRET
         value: mySecret
-    autoDeploy: true  # Automatically deploy on changes
+    autoDeploy: true
     ports:
-      - port: 5002  # Specifies the port to expose the service
+      - port: 5002
+
